@@ -1,10 +1,10 @@
+#/usr/bin/env python3
 import os
 import time
 from netmiko import ConnectHandler
 import pandas as pd
 
 #routers
-
 csv_filename = "devices.csv"
 try:
     df = pd.read_csv(csv_filename)

@@ -1,0 +1,12 @@
+---
+- name: Debug routers variable
+  debug:
+    var: routers
+
+- name: Generate local configs from template
+  template:
+    src: router_template.j2
+    dest: "./{{ item.hostname }}.cfg"
+  loop: "{{ routers }}"
+  loop_control:
+    loop_var: item

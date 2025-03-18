@@ -1,0 +1,8 @@
+---
+- name: Generate router configs (locally)
+  hosts: localhost
+  gather_facts: no
+  connection: local
+
+  roles:
+    - router

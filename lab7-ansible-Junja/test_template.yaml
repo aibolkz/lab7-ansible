@@ -1,0 +1,37 @@
+---
+- name: Test Jinja2 Template Locally
+  hosts: localhost
+  gather_facts: no
+  connection: local
+  
+  #
+  vars:
+    hostname: "R1"
+    interfaces:
+      - interface_type: "FastEthernet"
+        interface_name: "0/0"
+        ip_addr: "192.168.50.1"
+        netmask: "255.255.255.0"
+        ospf_enabled: "Yes"
+        ospf_pid: "1"
+        ospf_area: "0"
+      - interface_type: "Loopback"
+        interface_name: "1"
+        ip_addr: "10.0.0.1"
+        netmask: "255.255.255.255"
+        ospf_enabled: "Yes"
+        ospf_pid: "1"
+        ospf_area: "0"
+  
+  tasks:
+    - name: Render the router template locally
+      template:
+        src: "roles/router/templates/router_template.j2" 
+        dest: "./R1_generated.cfg"
+      # Тут указывайте путь к вашему шаблону
+      # Если шаблон в роли, возможно понадобится указать полный путь:
+      # src: "roles/router/templates/router_template.j2"
+
+    - name: Print generated config to screen
+      debug:
+        msg: "{{ lookup('file', './R1_generated.cfg') }}"

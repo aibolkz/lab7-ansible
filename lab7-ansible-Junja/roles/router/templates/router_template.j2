@@ -1,0 +1,22 @@
+!
+! ===== Configuration for Router {{ item.hostname }} =====
+!
+hostname {{ item.hostname }}
+
+router ospf {{ item.interfaces[0].ospf_pid }}
+!
+
+{% for intf in item.interfaces %}
+interface {{ intf.interface_type }}{{ intf.interface_name }}
+ ip address {{ intf.ip_addr }} {{ intf.netmask }}
+ no shutdown
+{% if intf.ospf_enabled == "Yes" %}
+ ip ospf {{ intf.ospf_pid }} area {{ intf.ospf_area }}
+{% endif %}
+!
+{% endfor %}
+
+line vty 0 4
+ transport input ssh
+!
+end

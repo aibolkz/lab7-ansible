@@ -1,0 +1,77 @@
+routers:
+- hostname: R1
+  interfaces:
+  - interface_name: '1'
+    interface_type: Loopback
+    ip_addr: 10.0.0.1
+    netmask: 255.255.255.255
+    ospf_area: '0'
+    ospf_enabled: 'Yes'
+    ospf_pid: '1'
+  - interface_name: 0/0
+    interface_type: FastEthernet
+    ip_addr: 192.168.50.1
+    netmask: 255.255.255.0
+    ospf_area: '0'
+    ospf_enabled: 'Yes'
+    ospf_pid: '1'
+  - interface_name: 2/0
+    interface_type: GigabitEthernet
+    ip_addr: 192.168.60.1
+    netmask: 255.255.255.0
+    ospf_area: '0'
+    ospf_enabled: 'Yes'
+    ospf_pid: '1'
+  - interface_name: 2/0
+    interface_type: FastEthernet
+    ip_addr: 192.168.70.1
+    netmask: 255.255.255.0
+    ospf_area: '0'
+    ospf_enabled: 'Yes'
+    ospf_pid: '1'
+- hostname: R2
+  interfaces:
+  - interface_name: '1'
+    interface_type: Loopback
+    ip_addr: 20.0.0.1
+    netmask: 255.255.255.255
+    ospf_area: '0'
+    ospf_enabled: 'Yes'
+    ospf_pid: '2'
+  - interface_name: 0/0
+    interface_type: FastEthernet
+    ip_addr: 192.168.50.2
+    netmask: 255.255.255.0
+    ospf_area: '0'
+    ospf_enabled: 'Yes'
+    ospf_pid: '2'
+  - interface_name: 1/0
+    interface_type: FastEthernet
+    ip_addr: 192.168.60.2
+    netmask: 255.255.255.0
+    ospf_area: '0'
+    ospf_enabled: 'Yes'
+    ospf_pid: '2'
+- hostname: R3
+  interfaces:
+  - interface_name: '1'
+    interface_type: Loopback
+    ip_addr: 30.0.0.1
+    netmask: 255.255.255.255
+    ospf_area: '0'
+    ospf_enabled: 'Yes'
+    ospf_pid: '3'
+  - interface_name: 0/0
+    interface_type: FastEthernet
+    ip_addr: 192.168.50.3
+    netmask: 255.255.255.0
+    ospf_area: '0'
+    ospf_enabled: 'Yes'
+    ospf_pid: '3'
+  - interface_name: 1/0
+    interface_type: FastEthernet
+    ip_addr: 192.168.70.3
+    netmask: 255.255.255.0
+    ospf_area: '0'
+    ospf_enabled: 'Yes'
+    ospf_pid: '3'

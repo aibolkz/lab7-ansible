@@ -1,0 +1,11 @@
+hostname,interface_type,interface_name,ip_addr,netmask,ospf_enabled,ospf_pid,ospf_area
+R1,Loopback,1,10.0.0.1,255.255.255.255,Yes,1,0
+R1,FastEthernet,0/0,192.168.50.1,255.255.255.0,Yes,1,0
+R1,GigabitEthernet,2/0,192.168.60.1,255.255.255.0,Yes,1,0
+R1,FastEthernet,2/0,192.168.70.1,255.255.255.0,Yes,1,0
+R2,Loopback,1,20.0.0.1,255.255.255.255,Yes,2,0
+R2,FastEthernet,0/0,192.168.50.2,255.255.255.0,Yes,2,0
+R2,FastEthernet,1/0,192.168.60.2,255.255.255.0,Yes,2,0
+R3,Loopback,1,30.0.0.1,255.255.255.255,Yes,3,0
+R3,FastEthernet,0/0,192.168.50.3,255.255.255.0,Yes,3,0
+R3,FastEthernet,1/0,192.168.70.3,255.255.255.0,Yes,3,0

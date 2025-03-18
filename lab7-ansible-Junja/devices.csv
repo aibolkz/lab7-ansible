@@ -1,0 +1,4 @@
+device_type,host,username,password,router_name
+cisco_ios,192.168.50.1,admin,admin,R1
+cisco_ios,192.168.50.2,admin,admin,R2
+cisco_ios,192.168.50.3,admin,admin,R3
